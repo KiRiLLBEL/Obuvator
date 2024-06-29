@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeFragment">
+
+    <TextView
+        android:id="@+id/connectedDeviceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No device connected"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <ListView
+        android:id="@+id/devices"
+        android:layout_width="wrap_content"
+        android:layout_height="469dp"
+        android:layout_above="@+id/untieButton"
+        android:layout_below="@id/connectedDeviceTextView"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/listview_border" />
+
+    <Button
+        android:id="@+id/untieButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/oval_button"
+        android:text="Завязать" />
+
+    <LinearLayout
+        android:id="@+id/batteryLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/untieButton"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/batteryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Battery: 0%"
+            android:textSize="18sp"
+            android:layout_gravity="center"/>
+
+        <ProgressBar
+            android:id="@+id/batteryProgressBar"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:progress="0"
+            android:max="100"
+            android:progressDrawable="@drawable/progress_bar_battery"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"/>
+    </LinearLayout>
+
+</RelativeLayout>
